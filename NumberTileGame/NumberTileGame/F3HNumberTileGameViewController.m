@@ -12,6 +12,7 @@
 #import "F3HControlView.h"
 #import "F3HScoreView.h"
 #import "F3HGameModel.h"
+#import "Mixpanel.h"
 
 #define ELEMENT_SPACING 10
 
@@ -215,24 +216,44 @@
 #pragma mark - Control View Protocol
 
 - (void)upButtonTapped {
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Swipe" properties:@{
+                                            @"Direction": @"Up"
+                                        }];
+    [mixpanel.people increment:@{@"Swipes": @1}];
     [self.model performMoveInDirection:F3HMoveDirectionUp completionBlock:^(BOOL changed) {
         if (changed) [self followUp];
     }];
 }
 
 - (void)downButtonTapped {
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Swipe" properties:@{
+                                          @"Direction": @"Down"
+                                          }];
+    [mixpanel.people increment:@{@"Swipes": @1}];
     [self.model performMoveInDirection:F3HMoveDirectionDown completionBlock:^(BOOL changed) {
         if (changed) [self followUp];
     }];
 }
 
 - (void)leftButtonTapped {
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Swipe" properties:@{
+                                          @"Direction": @"Left"
+                                          }];
+    [mixpanel.people increment:@{@"Swipes": @1}];
     [self.model performMoveInDirection:F3HMoveDirectionLeft completionBlock:^(BOOL changed) {
         if (changed) [self followUp];
     }];
 }
 
 - (void)rightButtonTapped {
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Swipe" properties:@{
+                                          @"Direction": @"Right"
+                                          }];
+    [mixpanel.people increment:@{@"Swipes": @1}];
     [self.model performMoveInDirection:F3HMoveDirectionRight completionBlock:^(BOOL changed) {
         if (changed) [self followUp];
     }];

@@ -5,13 +5,30 @@
 //  Created by Austin Zheng on 3/22/14.
 //
 //
-
+#import "Mixpanel.h"
 #import "F3HAppDelegate.h"
+#define MIXPANEL_TOKEN @"3cd59638327ca75b84526fcc23621974"
 
 @implementation F3HAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+    
+    // Later, you can get your instance with
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    // mixpanel identify: must be called before
+    // people properties can be set
+    [mixpanel identify:@"testingprofile"];
+    [mixpanel track:@"App Launched" properties:@{
+                                                @"Environment": @"Development",
+                                                @"Platform": @"iOS"
+                                                }];
+    
+    // Sets user 13793's "Plan" attribute to "Premium"
+    [mixpanel.people set:@{@"Tester": @"true"}];
+    [mixpanel.people increment:@{@"Sessions": @1}];
     // Override point for customization after application launch.
     return YES;
 }

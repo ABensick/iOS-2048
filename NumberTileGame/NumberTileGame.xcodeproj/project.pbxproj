@@ -34,6 +34,7 @@
 		1A34882518E169AA00D021C3 /* F3HScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A34882418E169AA00D021C3 /* F3HScoreView.m */; };
 		1A34882818E1713E00D021C3 /* F3HControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A34882718E1713E00D021C3 /* F3HControlView.m */; };
 		1A92D000191A016600E35C6C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A92CFFF191A016600E35C6C /* QuartzCore.framework */; };
+		3C261C02A3D6CFD4DBE31950 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F754EC343BF55726722B3B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		067703F46CB2A64F1B7C0A9B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1A3487AD18DEAD6E00D021C3 /* NumberTileGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumberTileGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3487B018DEAD6E00D021C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1A3487B218DEAD6E00D021C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +92,8 @@
 		1A34882618E1713E00D021C3 /* F3HControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = F3HControlView.h; path = Views/F3HControlView.h; sourceTree = "<group>"; };
 		1A34882718E1713E00D021C3 /* F3HControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = F3HControlView.m; path = Views/F3HControlView.m; sourceTree = "<group>"; };
 		1A92CFFF191A016600E35C6C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		37F754EC343BF55726722B3B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7D9874B28157D0CA2869332 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 				1A3487B318DEAD6E00D021C3 /* CoreGraphics.framework in Frameworks */,
 				1A3487B518DEAD6E00D021C3 /* UIKit.framework in Frameworks */,
 				1A3487B118DEAD6E00D021C3 /* Foundation.framework in Frameworks */,
+				3C261C02A3D6CFD4DBE31950 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +129,7 @@
 				1A3487D818DEAD6E00D021C3 /* NumberTileGameTests */,
 				1A3487AF18DEAD6E00D021C3 /* Frameworks */,
 				1A3487AE18DEAD6E00D021C3 /* Products */,
+				CC6E6CA0A4411DBE3DA5039B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +150,7 @@
 				1A3487B218DEAD6E00D021C3 /* CoreGraphics.framework */,
 				1A3487B418DEAD6E00D021C3 /* UIKit.framework */,
 				1A3487D218DEAD6E00D021C3 /* XCTest.framework */,
+				37F754EC343BF55726722B3B /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -230,6 +237,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		CC6E6CA0A4411DBE3DA5039B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7D9874B28157D0CA2869332 /* Pods.debug.xcconfig */,
+				067703F46CB2A64F1B7C0A9B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A3487E218DEAD6E00D021C3 /* Build configuration list for PBXNativeTarget "NumberTileGame" */;
 			buildPhases = (
+				F02A0F830A6B4093F20C0AB7 /* Check Pods Manifest.lock */,
 				1A3487A918DEAD6E00D021C3 /* Sources */,
 				1A3487AA18DEAD6E00D021C3 /* Frameworks */,
 				1A3487AB18DEAD6E00D021C3 /* Resources */,
+				45A39DC8D8A0F3C8B835E09D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,6 +342,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45A39DC8D8A0F3C8B835E09D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F02A0F830A6B4093F20C0AB7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1A3487A918DEAD6E00D021C3 /* Sources */ = {
@@ -468,6 +519,7 @@
 		};
 		1A3487E318DEAD6E00D021C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7D9874B28157D0CA2869332 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -485,6 +537,7 @@
 		};
 		1A3487E418DEAD6E00D021C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 067703F46CB2A64F1B7C0A9B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
