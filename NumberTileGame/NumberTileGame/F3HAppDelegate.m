@@ -7,7 +7,7 @@
 //
 #import "Mixpanel.h"
 #import "F3HAppDelegate.h"
-#define MIXPANEL_TOKEN @"3cd59638327ca75b84526fcc23621974"
+#define MIXPANEL_TOKEN @"4d90c22062bff864702b60db1b6f702f"
 
 @implementation F3HAppDelegate
 
